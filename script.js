@@ -32,6 +32,8 @@ function addC() {
 function removeR() {
     //alert("Clicked Remove Row")
     let rows = document.getElementsByTagName("tr");
+    let length = rows.length;
+    rows[length-1].remove();
 }
 //Remove a column
 function removeC() {
