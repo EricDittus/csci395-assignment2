@@ -18,7 +18,7 @@ function addR() {
 
     }
 }
-//Adds a column
+//Adds a column test
 function addC() {
     //alert("Clicked Add Col")
     let cols = document.getElementsByTagName("td");
