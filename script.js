@@ -16,7 +16,6 @@ function addR() {
         row.appendChild(col);
         grid.appendChild(row);
     }
-
 }
 //Adds a column done by EricDittus 
 function addC() {
