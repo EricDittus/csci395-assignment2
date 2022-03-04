@@ -15,19 +15,23 @@ function addR() {
         };
         row.appendChild(col);
         grid.appendChild(row);
-
     }
 }
 //Adds a column
 function addC() {
     //alert("Clicked Add Col")
-    let cols = document.getElementsByTagName("td");
-    console.log(cols.length);
+    let rows = document.getElementsByTagName("tr");
+    let length = rows.length;
+    let new_col = document.createElement("td");
+    for(let i = 0; i<length; i++){
+      rows[i].appendChild(new_col);
+    }
 }
 
 //Removes a row
 function removeR() {
-    alert("Clicked Remove Row")
+    //alert("Clicked Remove Row")
+    let rows = document.getElementsByTagName("tr");
 }
 //Remove a column
 function removeC() {
