@@ -20,7 +20,16 @@ function addR() {
 //Adds a column
 function addC() {
     //alert("Clicked Add Col")
+    let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
+    let cols = document.getElementsByTagName("td");
+
+    if(rows.length === 0){
+      let row = document.createElement("tr");
+      //let col = document.createElement("td");
+      grid.appendChild(row);
+
+    }
     let length = rows.length;
     let new_col = document.createElement("td");
     for(let i = 0; i<length; i++){
