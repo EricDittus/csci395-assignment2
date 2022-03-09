@@ -19,24 +19,9 @@ function addR() {
 }
 //Adds a column done by EricDittus 
 function addC() {
-    //alert("Clicked Add Col")
-    // col.appendChild(row);
-    // grid.appendChild(col);    
+    var el2 = document.getElementById("test");
+    el2.appendChild();
 
-
-    let grid = document.getElementById("grid");
-    let cols = document.getElementById("test1");
-    console.log(cols.length);
-
-    if (cols.length === 0 || cols.length >= 0) {
-        let row = document.getElementById("test");
-        let col = document.getElementById("test1");
-        col.onclick = function () {
-            this.style.backgroundColor = colorSelected;
-        };
-        col.appendChild(row);
-        grid.appendChild(col);
-    }
 }
 //! this is for you
 function removeR() {
@@ -48,7 +33,7 @@ function removeR() {
 
 //Remove a column done by EricDittus 
 function removeC() {
-    alert("Clicked Remove Col")
+    //alert("Clicked Remove Col")
 }
 //sets global var for selected color
 function selected() {
