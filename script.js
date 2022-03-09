@@ -58,15 +58,15 @@ function selected() {
 
 //done by others
 function fill() {
-    alert("Clicked Fill All")
+    //alert("Clicked Fill All")
 }
 
 //! this is for you
 function clearAll() {
-    alert("Clicked Clear All")
+    //alert("Clicked Clear All")
 }
 
 //done by others
 function fillU() {
-    alert("Clicked Fill All Uncolored")
+    //alert("Clicked Fill All Uncolored")
 }
