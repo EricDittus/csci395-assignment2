@@ -20,8 +20,23 @@ function addR() {
 //Adds a column done by EricDittus 
 function addC() {
     //alert("Clicked Add Col")
-    let cols = document.getElementsByTagName("td");
+    // col.appendChild(row);
+    // grid.appendChild(col);    
+
+
+    let grid = document.getElementById("grid");
+    let cols = document.getElementById("test1");
     console.log(cols.length);
+
+    if (cols.length === 0 || cols.length >= 0) {
+        let row = document.getElementById("test");
+        let col = document.getElementById("test1");
+        col.onclick = function () {
+            this.style.backgroundColor = colorSelected;
+        };
+        col.appendChild(row);
+        grid.appendChild(col);
+    }
 }
 //! this is for you
 function removeR() {
