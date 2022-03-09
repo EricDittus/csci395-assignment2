@@ -19,8 +19,6 @@ function addR() {
 }
 //Adds a column done by EricDittus 
 function addC() {
-    var el2 = document.getElementById("test");
-    el2.appendChild();
 
 }
 //! this is for you
