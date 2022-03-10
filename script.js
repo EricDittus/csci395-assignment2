@@ -46,7 +46,21 @@ function removeR() {
 }
 //Remove a column
 function removeC() {
-    alert("Clicked Remove Col")
+    let rows = document.getElementsByTagName("tr");
+    let cols = document.getElementsByTagName("td");
+    let num_cols = cols.length;
+    let num_rows = rows.length;
+    let row_indexes = num_cols/num_rows;
+    let last_child = false;
+    let counter = 1;
+    for(let i = 0; i <= num_cols; i++){
+      if(counter === row_indexes){
+        cols[i].remove();
+        counter = 1;
+      }
+      counter++;
+    }
+    //alert("Clicked Remove Col")
 }
 //sets global var for selected color
 function selected(){
