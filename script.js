@@ -75,13 +75,40 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    const grid = document.querySelector("#grid");;
+    for (let row of grid.rows) 
+    {
+        for (let col of row.cells)
+        {
+            col.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    const grid = document.querySelector("#grid");
+    for (let row of grid.rows)
+    {
+        for (let col of row.cells)
+        {
+            col.style.backgroundColor = "";
+        }
+    }
+    
 }
 
+
+
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    const grid = document.querySelector("#grid");
+    for (let row of grid.rows)
+    {
+        for (let col of row.cells)
+        {
+            if (col.style.backgroundColor === "")
+            {
+                col.style.backgroundColor = colorSelected;
+            }
+        }
+    }   
 }
