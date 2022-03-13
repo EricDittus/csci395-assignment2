@@ -2,6 +2,7 @@ let colorSelected;
 
 //Adds a row
 function addR() {
+  
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
     console.log(rows.length);
@@ -17,6 +18,7 @@ function addR() {
         row.appendChild(col);
         grid.appendChild(row);
     }
+
 }
 //Adds a column
 function addC() {
@@ -27,15 +29,18 @@ function addC() {
 
     if(rows.length === 0){
       let row = document.createElement("tr");
-      //let col = document.createElement("td");
+      let col = document.createElement("td");
+      row.appendChild(col)
       grid.appendChild(row);
 
+    }else{
+      for(let i = 0; i<rows.length; i++){
+        let new_col = document.createElement("td");
+        rows[i].appendChild(new_col);
+        //grid.appendChild(rows[i]);
+      }
     }
-    let length = rows.length;
-    let new_col = document.createElement("td");
-    for(let i = 0; i<length; i++){
-      rows[i].appendChild(new_col);
-    }
+
 }
 
 //Removes a row
@@ -54,18 +59,30 @@ function removeR() {
 function removeC() {
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
+    let grid = document.getElementById("grid");
     let num_cols = cols.length;
     let num_rows = rows.length;
     let row_indexes = num_cols/num_rows;
-    let last_child = false;
-    let counter = 1;
-    for(let i = 0; i <= num_cols; i++){
-      if(counter === row_indexes){
-        cols[i].remove();
-        counter = 1;
+
+    if(cols.length===rows.length){
+      for(let i = 0; i<num_rows; i++){
+        //let col = document.createElement("td");
+        cols[cols.length-1].remove()
+        rows[rows.length-1].remove();
       }
-      counter++;
+    }else{
+      let counter = 1;
+      for(let i = 0; i < num_cols; i++){
+        if(counter === row_indexes){
+          cols[i].remove();
+          counter = 1;
+        }
+        counter++;
+      }
     }
+
+
+
     //alert("Clicked Remove Col")
 }
 //sets global var for selected color
