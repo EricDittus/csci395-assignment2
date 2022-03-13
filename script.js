@@ -2,20 +2,22 @@ let colorSelected;
 
 //Adds a row
 function addR() {
-  //alert("Clicked Add Row")
-  let grid = document.getElementById("grid");
-  let rows = document.getElementsByTagName("tr");
-  console.log(rows.length);
+  
+    let grid = document.getElementById("grid");
+    let rows = document.getElementsByTagName("tr");
+    console.log(rows.length);
 
-  if (rows.length === 0) {
-      let row = document.createElement("tr");
-      let col = document.createElement("td");
-      col.onclick = function (){
-          this.style.backgroundColor = colorSelected;
-      };
-      row.appendChild(col);
-      grid.appendChild(row);
-  }
+    if (rows.length === 0 || rows.length >= 0) {
+        let row = document.createElement("tr");
+        row.setAttribute("id", "test");
+        let col = document.createElement("td");
+        col.setAttribute("id", "test1");
+        col.onclick = function () {
+            this.style.backgroundColor = colorSelected;
+        };
+        row.appendChild(col);
+        grid.appendChild(row);
+    }
 
 }
 //Adds a column
@@ -43,10 +45,15 @@ function addC() {
 
 //Removes a row
 function removeR() {
-    //alert("Clicked Remove Row")
-    let rows = document.getElementsByTagName("tr");
-    let length = rows.length;
-    rows[length-1].remove();
+    // //alert("Clicked Remove Row")
+    // let rows = document.getElementsByTagName("tr");
+    // let length = rows.length;
+    // rows[length-1].remove();
+
+    var el = document.getElementById("test");
+    var el2 = document.getElementById("test1");
+    el.remove();
+    el2.remove();
 }
 //Remove a column
 function removeC() {
@@ -85,13 +92,39 @@ function selected(){
 }
 
 function fill(){
-    alert("Clicked Fill All")
+    const grid = document.getElementById("grid");
+    for (let row of grid.rows) 
+    {
+        for (let col of row.cells)
+        {
+            col.style.backgroundColor = colorSelected;
+        }
+    }
 }
 
 function clearAll(){
-    alert("Clicked Clear All")
+    const grid = document.getElementById("grid");
+    for (let row of grid.rows)
+    {
+        for (let col of row.cells)
+        {
+            col.style.backgroundColor = "";
+        }
+    }
+    
 }
 
+
 function fillU(){
-    alert("Clicked Fill All Uncolored")
+    const grid = document.getElementById("grid");
+    for (let row of grid.rows)
+    {
+        for (let col of row.cells)
+        {
+            if (col.style.backgroundColor === "")
+            {
+                col.style.backgroundColor = colorSelected;
+            }
+        }
+    }   
 }
