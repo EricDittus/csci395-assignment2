@@ -1,9 +1,23 @@
 tr,td{
     border:1px;
     border-style: solid;
+    border-radius: 10%;
 }
 td{
     height: 50px;
     width: 50px;
     background-color: white;
+}
+
+.tool-bar{
+  margin-left: 27%;
+  margin-right: auto;
+}
+.grid-location{
+  margin-top: 50px;
+  margin-left: 10%;
+  margin-right: 10%;
+}
+body {
+    background-color: #f3efe9 !important;
 }
