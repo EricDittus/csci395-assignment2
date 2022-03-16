@@ -11,7 +11,7 @@ function addR() {
 
     if (rows.length === 0) {
         let row = document.createElement("tr");
-        var col = document.createElement("td");
+        let col = document.createElement("td");
         col.onclick = function () {
             this.style.backgroundColor = colorSelected;
         };
@@ -21,7 +21,7 @@ function addR() {
       let row = document.createElement("tr");
       grid.appendChild(row);
       for(let i = 0; i < num_col_per_row; i++){
-        var col = document.createElement("td");
+        let col = document.createElement("td");
         col.onclick = function (){
             this.style.backgroundColor = colorSelected;
         };
@@ -37,11 +37,10 @@ function addR() {
 function addC() {
     let grid = document.getElementById("grid");
     let rows = document.getElementsByTagName("tr");
-    let cols = document.getElementsByTagName("td");
 
     if(rows.length === 0){
-      var row = document.createElement("tr");
-      var col = document.createElement("td");
+      let row = document.createElement("tr");
+      let col = document.createElement("td");
       col.onclick = function (){
             this.style.backgroundColor = colorSelected;
       };
@@ -50,7 +49,7 @@ function addC() {
 
     }else{
       for(let i = 0; i<rows.length; i++){
-        var new_col = document.createElement("td");
+        let new_col = document.createElement("td");
         new_col.onclick = function (){
               this.style.backgroundColor = colorSelected;
         };
@@ -71,7 +70,6 @@ function removeR() {
 function removeC() {
     let rows = document.getElementsByTagName("tr");
     let cols = document.getElementsByTagName("td");
-    let grid = document.getElementById("grid");
     let num_cols = cols.length;
     let num_rows = rows.length;
     let row_indexes = num_cols/num_rows;
@@ -94,7 +92,7 @@ function removeC() {
     }
 }
 
-//sets global var for selected color
+//sets global let for selected color
 function selected(){
     colorSelected = document.getElementById("selectedID").value;
     console.log(colorSelected);
@@ -122,7 +120,6 @@ function clearAll(){
     }
 
 }
-
 
 function fillU(){
     const grid = document.getElementById("grid");
